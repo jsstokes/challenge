@@ -21,7 +21,6 @@ The following values were used for the Workflow executions
 - numbers:[2,3,4],    target: 6
 - numbers:[3,3],      target: 6
 - numbers:[-1,0],     target: -1
-- numbers:[1,2,3,10], target: 2
 
 
 
