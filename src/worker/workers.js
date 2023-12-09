@@ -14,9 +14,8 @@ const findSum = () => {
   return {
     taskDefName: FIND_SUM,
     execute: async({inputData}) => {
-      var result = null
-      for (let x = 0; (x < inputData.numbers.length) && !result; x++) {
-        for (let y = x + 1; y < inputData.numbers.length; y++) {
+    var result = null
+    for (let x = 0; (x < inputData.numbers.length) && !result; x++) {
         for (let y = x + 1; y < inputData.numbers.length; y++) {
           if ( (inputData.numbers[x] + inputData.numbers[y]) == inputData.target) {
               result = [x,y]
@@ -24,17 +23,18 @@ const findSum = () => {
           }
         }
       }
-      return result
+      // return result
     
       return {
         outputData: {
-          result: result
+          result: result,
         },
         status: "COMPLETED"
       }
     }
   }
 }
+
 
 const userInfo = () => {
   return {
