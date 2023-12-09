@@ -1,4 +1,9 @@
 # Challenge
+This repository contains the results of my Orkes Challenge.
+
+## Object
+Create a workflow
+# Challenge
 This repository contains the results of my Orkes Challenge. It is a clone of the Orkes javascript-sdk-examples repo with minimal changes required for the challenge.  
 
 ## Objective
@@ -29,63 +34,3 @@ npm install
 node src/main.js
 ```
 
-## Workflow
-
-We create a simple 2-step workflow that fetches the user details and sends an email.
-
-<table><tr><th>Visual</th><th>Code</th></tr>
-<tr>
-<td width="50%"><img src="resources/workflow.png" width="250px"></td>
-<td>
-<pre>
-
-const getUserDetailsTask = simpleTask(GET_USER_INFO, GET_USER_INFO, {
-  userId: "${workflow.input.userId}",
-});
-const emailOrSmsTask = switchTask("emailorsms", "${workflow.input.notificationPref}", {
-  email: [
-    simpleTask(SEND_EMAIL, SEND_EMAIL, {
-      email: "${get_user_info.output.email}",
-    })
-  ],
-  sms: [
-    simpleTask(SEND_SMS, SEND_SMS, {
-      phoneNumber: "${get_user_info.output.phoneNumber}",
-    })
-  ],
-});
-const wf = workflow(COMPLEX_WORKFLOW_NAME, [
-  getUserDetailsTask,
-  emailOrSmsTask,
-]);
-wf.inputParameters = ['userId', 'notificationPref']
-
-</pre>
-</td>
-</tr>
-</table>
-
-## Worker
-
-Workers are implemented as simple functions with sample implementation.  
-See [workers.js](src/worker/workers.js) for details.
-
-## Executing Workflows
-
-There are two ways to execute a workflow:
-
-1. Synchronously - useful for short duration workflows that completes within a few second.
-2. Asynchronously - workflows that runs for longer period
-
-### Synchronous Workflow Execution
-```javascript
-WorkflowExecutor#executeWorkflow(...)
-```
-
-### Asynchronous Workflow Execution
-
-```javascript
-WorkflowExecutor#startWorkflow(...)
-```
-
-See [main.js](src/main.js) for complete code sample of workflow execution.
