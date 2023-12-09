@@ -18,6 +18,13 @@ The objective is to search the array and return the indices of the 2 elements wh
 ## Output
 The results are shown in the Output variable **result** of the task named *JSS_sumNumbers* 
 
+The following values were used for the Workflow executions
+- numbers:[3,2,4],    target: 6
+- numbers:[2,3,4],    target: 6
+- numbers:[3,3],      target: 6
+- numbers:[-1,0],     target: -1
+- numbers:[1,2,3,10], target: 2
+
 
 
 ## Export variables
