@@ -56,4 +56,9 @@ async function runAsync() {
     console.log("=======================================================================================");
 }
 
+/*  DON'T FORGET TO SET THE FOLLOWING ENVIRONMENT VARIABLES
+    export CONDUCTOR_SERVER_URL=https://play.orkes.io/api
+    export KEY=dccbffd7-bab3-4f50-8aaf-d05cb489f3ce
+    export SECRET=SFuC2GjB0RqYrvczVRX6osWj8hpmaNRDK3Z8oTMVW9XRuoke
+*/
 main()

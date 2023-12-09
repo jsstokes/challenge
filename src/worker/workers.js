@@ -23,8 +23,6 @@ const findSum = () => {
           }
         }
       }
-      // return result
-    
       return {
         outputData: {
           result: result,
