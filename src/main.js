@@ -7,15 +7,25 @@ const {
 const { getWorkflowExecutionUrl } = require("./client/apiUtil")
 
 async function main() {
-    const wf = await createAndRegisterWorkflow();
+    // const wf = await createAndRegisterWorkflow();
     const taskManager = await createTaskManager();
     taskManager.startPolling();
-    await runSync();
-    await runAsync();
-    await taskManager.stopPolling();
-    process.exit(0);
+    // await runSync();
+    // await runAsync();
+    // await taskManager.stopPolling();
+    console.log(taskManager.isPolling)
+    await sleep(1000)
+
+    // process.exit(0);
+    
 }
 
+
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
 async function runSync() {
     const workflowRun = await executeWorkflowSync();
     if (workflowRun.status != 'COMPLETED') {
