@@ -1,7 +1,7 @@
 # Challenge
 This repository contains the results of my Orkes Challenge. It is a clone of the Orkes javascript-sdk-examples repo with minimal changes required for the challenge.  
 
-## Object
+## Objective
 Create a workflow that calls a worker. 
 
 The Workflow takes two parameters:
